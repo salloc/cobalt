@@ -21,6 +21,6 @@ COPY --from=build --chown=node:node /prod/api /app
 COPY --from=build --chown=node:node /app/.git /app/.git
 
 USER node
-
-EXPOSE 9000
+ENV API_PORT=8080
+EXPOSE 8080
 CMD [ "node", "src/cobalt" ]
