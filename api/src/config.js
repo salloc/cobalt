@@ -13,10 +13,8 @@ const enabledServices = new Set(Object.keys(services).filter(e => {
 
 const env = {
     apiURL: process.env.API_URL || '',
-    apiPort: process.env.API_PORT || 9000,
-    tunnelPort: process.env.API_PORT || 9000,
-
-    listenAddress: process.env.API_LISTEN_ADDRESS,
+    apiPort: process.env.PORT || 9000,
+    listenAddress: process.env.API_LISTEN_ADDRESS || '0.0.0.0',
     freebindCIDR: process.platform === 'linux' && process.env.FREEBIND_CIDR,
 
     corsWildcard: process.env.CORS_WILDCARD !== '0',

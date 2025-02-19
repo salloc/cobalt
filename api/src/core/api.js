@@ -382,8 +382,8 @@ export const runAPI = async (express, app, __dirname, isPrimary = true) => {
         const istreamer = express();
         istreamer.get('/itunnel', itunnelHandler);
         const server = istreamer.listen({
-            port: 0,
-            host: '127.0.0.1',
+            port: 8080,
+            host: '0.0.0.0',
             exclusive: true
         }, () => {
             const { port } = server.address();
