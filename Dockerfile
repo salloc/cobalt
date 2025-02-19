@@ -8,7 +8,7 @@ COPY . /app
 
 RUN corepack enable
 RUN apk add --no-cache python3 alpine-sdk
-RUN npm i -g pnpm
+
 RUN pnpm install --prod --frozen-lockfile
 
 RUN pnpm deploy --filter=@imput/cobalt-api --prod /prod/api
